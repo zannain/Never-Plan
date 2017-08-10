@@ -11,7 +11,7 @@ class YelpsController < ApplicationController
   def create
     @yelp = current_user.yelps.build(yelp_params)
     if @yelp.save
-      redirect_to search_path
+      redirect_to request.referer
     end
 
   end
