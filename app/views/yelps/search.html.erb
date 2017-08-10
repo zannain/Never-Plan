@@ -1,0 +1,41 @@
+<%= render 'lookup' %>
+<!-- <%= @response.to_json %> -->
+  <div class="card-deck">
+    <% if @response.present? && !@response['businesses'].nil? %>
+      <% @response["businesses"].each do |result| %>
+        <div class="card">
+          <%= image_tag(result["image_url"], class:"card-img-top") %>
+            <div class="card-block">
+              <h4 class="card-title">
+                <%= result["name"] %>
+              </h4>
+              <p class="card-text">Address:
+                <%= result["location"]["display_address"][0] %>
+              </p>
+              <p class="card-text">Phone:
+                <%= result["display_phone"] %>
+              </p>
+              <p class="card-text">Rating:
+                <%= result["rating"] %>
+                  <p>
+            </div>
+            <div class="card-footer">
+              <%= link_to "Check them out on Yelp", result["url"], class:"card-link text-muted" %>
+            </div>
+            <hr>
+            <!-- <%= result %> -->
+            <%= form_tag yelps_path, method: "post" do |f| %>
+
+              
+                <%= hidden_field_tag "result[phone]", result["display_phone"]  %>
+                  <%= hidden_field_tag "result[address]", result["location"]['city']  %>
+                    <%= hidden_field_tag "result[name]", result["name"] %>
+                    <%= hidden_field_tag "result[image]", result["image_url"] %>
+                    <%= hidden_field_tag "result[price]", result["price"] %>
+                    <%= hidden_field_tag "result[review_count]", result["review_count"] %>
+                      <%= button_tag "Save to my profile", type:"submit", class:"btn btn-success" %>
+                        <% end %>
+        </div>
+        <% end %>
+          <% end %>
+  </div>

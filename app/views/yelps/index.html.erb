@@ -1,0 +1,29 @@
+<div class="card-deck">
+          <% @yelps.each do |business| %>
+            <div class="card">
+              <%= image_tag(business["image"], class:"card-img-top") %>
+                <div class="card-block">
+                  <h4 class="card-title">
+                    <%= business["name"] %>
+                  </h4>
+                  <p class="card-text">Address:
+                    <%= business["address"] %>
+                  </p>
+                  <p class="card-text">Phone:
+                    <%= business["phone"] %>
+                  </p>
+                  <p class="card-text">Review Count:
+                    <%= business["review_count"] %>
+                      <p>
+                  <!-- <p class="card-text">Rating:
+                    <%= business["rating"] %>
+                      <p> -->
+                </div>
+                <!-- <div class="card-footer">
+                  <%= link_to "Check them out on Yelp", business["url"], class:"card-link text-muted" %>
+                </div> -->
+                <hr>
+                <%= button_to "Delete", {:controller => :yelps, :action => "destroy", yelp_id: business.id }, :method => :delete, class: 'btn btn-danger' %>
+            </div>
+            <% end %>
+      </div>
