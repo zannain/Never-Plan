@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "welcome#index"
+  root "yelps#search"
   # get 'yelps/search'
 
   get '/users/:id/yelps/', to: 'yelps#index', as: "user_yelps"

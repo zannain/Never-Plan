@@ -23,22 +23,3 @@
   padding-top: 2em;
 }
 
-.bg-no-overlay {
-    font-family: 'Raleway', sans-serif;
-    
-    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .7)),
-    url("background.jpeg");
-  background-size:100% 100%;
-  background-repeat:no-repeat;
-  overflow-y: hidden;
-  overflow-x: hidden;
-    background-position: center center;
-    color: #fff;
-    height: 450px;
-    padding-top: 50px;
-    min-height: 100%;
-    min-width: 100%;
-    h1 {
-      font-size: 6em;
-    }
-}
