@@ -7,6 +7,8 @@
 
 ### API: [Yelp Fusion](https://www.yelp.com/fusion)
 
+### You can watch a screencast walking through the features of the website via the neverplan.mov file in the repository. 
+
 ### Have you ever used Yelp and been overwhelmed by the amount of options you are given?
 
 ## Never Plan is your solution!
